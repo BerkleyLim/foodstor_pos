@@ -1,5 +1,14 @@
 # foodstor_pos
-This is the program on foot store pos machine. 
+This is the program on foot store pos machine.
+
+## 개발 목적
+- Github 토이 프로젝트로 알고리즘 실력 올리는 프로젝트의 목적으로 시작
+- 이를 토대로 웹으로 개발을 하여 실제로 돌아가는 프로그램으로 구현
+- 현재 Typescript와 React-Query를 입문용도로 쓰이고 있음
+- React를 이용하여 프론트엔드 적용, Spring Boot와 Java 로직을 이용하여 포스기 로직, 계산기 로직, 음식점 로직으로 적용
+
+## 개발 기간
+- 23년 9월 8일 ~
 
 ## 개발 환경
 - OS : Windows 11
@@ -13,7 +22,13 @@ This is the program on foot store pos machine.
 - Window
 
 (2) 프론트 엔드
-- React, React-Query, 
+- React, React-Query, Typescript
 
 (3) 백엔드
 - Java, Spring Boot, My-Batis
+
+## 파급효과
+- 스스로 로직을 짤 수 있는 능력을 보다 더 향상 시키는 계기가 되었다
+- Typescript에 대해 접할 수 있는 기회가 되었다
+- React-Query 사용하는 방법에 대해 숙지할 수 있다
+- Java기반으로 백엔드 로직을 구현 할 수 있다.
