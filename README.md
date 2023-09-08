@@ -3,6 +3,7 @@ This is the program on foot store pos machine.
 
 ## 개발 목적
 - Github 토이 프로젝트로 알고리즘 실력 올리는 프로젝트의 목적으로 시작
+- 현업에서 최상의 퍼포먼스를 내기 위한 숙련도를 쌓는 프로젝트 중 하나로 만듬
 - 이를 토대로 웹으로 개발을 하여 실제로 돌아가는 프로그램으로 구현
 - 현재 Typescript와 React-Query를 입문용도로 쓰이고 있음
 - React를 이용하여 프론트엔드 적용, Spring Boot와 Java 로직을 이용하여 포스기 로직, 계산기 로직, 음식점 로직으로 적용
