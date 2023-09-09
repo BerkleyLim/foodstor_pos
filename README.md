@@ -24,7 +24,7 @@ This is the program on foot store pos machine.
 - Window
 
 (2) 프론트 엔드
-- React, React-Query, Typescript
+- React, React-Query, Typescript, react-strap
 
 (3) 백엔드
 - Java, Spring Boot, My-Batis
