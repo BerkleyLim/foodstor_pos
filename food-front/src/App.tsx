@@ -3,9 +3,9 @@ import './App.css';
 import {
   QueryClient,
   QueryClientProvider,
-  useQuery,
+  // useQuery,
 } from 'react-query'
-import Index from './component';
+import Index from './component/index';
 
 // const {useEffect, useState} = React;
 

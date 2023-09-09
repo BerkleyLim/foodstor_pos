@@ -1,0 +1,17 @@
+.componentContainer {
+  // display: flex;
+  // vertical-align: middle;
+  justify-content: center;
+  // flex-direction: column;
+}
+
+.kioskContainer {
+  background-color: white;
+  max-width: 900px;
+  margin: 0 auto;
+  // vertical-align: middle;
+}
+
+.kioskLog {
+  display: block;
+}
