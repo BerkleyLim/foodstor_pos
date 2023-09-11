@@ -1,94 +1,93 @@
 import React from 'react'
-import {
-  QueryClient,
-  QueryClientProvider,
-  useQuery,
-} from 'react-query'
 import styles from "./index.module.scss"
-import { Card, CardHeader, Button, Form, Input, Label } from 'reactstrap'
-const {useState, useEffect} = React;
-// const queryClient = new QueryClient();
+import { Card, CardBody, CardHeader, Table } from 'reactstrap'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import InputUserInfo from './UserInfo/InputUserInfo';
+import Bank from './bank/Bank';
+import MenuIndex from './menu/MenuIndex';
+import PosFood from './posfood/PosFood';
 
 const Index = (): string | any => {
-  const [createForm, setCreateForm] = useState<any>();
-
-  // const { isLoading, isError, data } = useQuery({
-  //   queryKey: ['board'],
-  //   queryFn: () =>
-  //     // fetch('https://api.github.com/repos/tannerlinsley/react-query').then(
-  //     fetch('http://localhost:8080/api/board/').then(
-  //       (res) => res.json(),
-  //     ),
-  // })
-
-  // if (isLoading) return 'Loading...';
-
-  // if (isError) return 'An error has occurred : ';
-
-  // console.log(data)
-
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-
-    setCreateForm({
-      ...createForm,
-      [name]: value,
-    })
-    console.log(createForm)
-  }
-
-
   return (
-    // <QueryClientProvider client={queryClient}>
-    //   <div>shoifeijkl</div>
-    // </QueryClientProvider>
-    <div className={`${styles?.componentContainer}`}>
-      {/* {data.map((board:any, index:number) =>
-          <div key={index}>
-            {board?.bno}
-          </div>
-        )} */}
-      <Card body className={`${styles?.kioskContainer}`}>
-        <CardHeader className="mb-3" tag="h1">
-          본인 개인정보 입력
-        </CardHeader>
-        <Form className={`form-floating mb-3`}>
-          <Input className="form-control fw-bold border" name="userName" onChange={onChange}/>
-          <Label className="">이름</Label>
-        </Form>
-        <Form className="form-floating mb-3">
-          <Input className="form-control fw-bold border" name="userAge" onChange={onChange}/>
-          <Label className="">나이</Label>
-        </Form>
-        <Form className="form-floating mb-3">
-          <Input className="form-control fw-bold border" name="userSex" onChange={onChange}/>
-          <Label className="">성별</Label>
-        </Form>
-        <Form className="form-floating mb-3">
-          <Input className="form-control fw-bold border" name="userPhone" onChange={onChange}/>
-          <Label className="">전화번호(- 없이 입력)</Label>
-        </Form>
-        <Form className="form-floating mb-3">
-          <Input className="form-control fw-bold border" name="userInfoNumber" onChange={onChange}/>
-          <Label className="">주민번호(앞자리6글자)</Label>
-        </Form>
-        <Form className="form-floating mb-3">
-          <Input className="form-control fw-bold border" name="userPassword" onChange={onChange}/>
-          <Label className="">카드비밀번호(4자리)</Label>
-        </Form>
-        <Button color={"primary"}>
-          제 출
-        </Button>
-      </Card>
-      <br/><br/><br/>
+    <Router>
+      <div className={`${styles?.componentContainer}`}>
+        <Routes>
+          <Route path="/" element={<InputUserInfo />} />
+          <Route path="/inputuserinfo" element={<InputUserInfo />} />
+          <Route path="/menuindex" element={<MenuIndex />} />
+          <Route path="/posfood" element={<PosFood />} />
+          <Route path="/bank" element={<Bank />} />
+        </Routes>
 
-      <Card body className={`${styles?.kioskLog}`}>
-        <CardHeader tag="h1">
-          주문 정보 관련 리스트 출력
-        </CardHeader>
-      </Card>
+        <br /><br /><br />
 
-    </div>
+        <Card body className={`${styles?.kioskLog}`}>
+          <CardHeader tag="h1">
+            주문 정보 관련 로그
+          </CardHeader>
+          <CardBody>
+            <Table border={1} className={`w-100`}>
+              <thead className={`w-100`}>
+                <th>
+                  번호(lno)
+                </th>
+                <th>
+                  사용 메뉴(selectNumber)
+                </th>
+                <th>
+                  이벤트(event)
+                </th>
+                <th>
+                  요청 파라미터(requestParam)
+                </th>
+                <th>
+                  상태값(status)
+                </th>
+                <th>
+                  기종(userAgent)
+                </th>
+                <th>
+                  응답 파라미터(responseParam)
+                </th>
+              </thead>
+              <tbody>
+                <td>
+                  1
+                </td>
+                <td>
+                  1 - 로그인
+                </td>
+                <td>
+                  로그인성공
+                </td>
+                <td>
+                    userAge:"29",
+                    userInfoNumber:"840501",
+                    userName:"berkley",
+                    userPassword:"711",
+                    userPhone:"01011111111",
+                    userSex:"남"
+                </td>
+                <td>
+                  200
+                </td>
+                <td>
+                  window11
+                </td>
+                <td>
+                    userInfoNumber:"840501",
+                    userName:"berkley",
+                    userPassword:"711",
+                    userPhone:"01011111111",
+                    userSex:"남"
+                </td>
+              </tbody>
+            </Table>
+          </CardBody>
+        </Card>
+
+      </div>
+    </Router>
   )
 }
 

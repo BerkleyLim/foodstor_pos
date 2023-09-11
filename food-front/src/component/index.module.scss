@@ -1,17 +1,45 @@
-.componentContainer {
-  // display: flex;
-  // vertical-align: middle;
-  justify-content: center;
-  // flex-direction: column;
-}
-
-.kioskContainer {
+// 공통 컴포넌트
+.container {
   background-color: white;
-  max-width: 900px;
   margin: 0 auto;
   // vertical-align: middle;
 }
 
+//------------------------ Header 관련 -------------------------------------------
+.headerComponent {
+  background-color: white;  
+  font-size: 1.5rem;
+}
+
+
+//---------------------------- 사용자 정보 입력--------------------------------------
+.componentContainer {
+  justify-content: center;
+}
+
+.kioskContainer {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .kioskLog {
   display: block;
+}
+
+//--------------------------- 선택 메뉴 ---------------------------------------------
+.menuBarContainer {
+  max-width: 900px;
+  padding: 50px 50px 50px 50px;
+  margin: 0 auto;
+}
+
+.menuBar {
+  margin: 0 auto;
+  text-align: center;
+}
+
+// --------------------------- 입출금 관리 ----------------------------------------------
+.bankContainer {
+  max-width: 900px;
+  margin: 0 auto;
 }
