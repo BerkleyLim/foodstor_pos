@@ -1,0 +1,61 @@
+server:
+  shutdown: graceful
+
+spring:
+  h2:
+    console:
+      enabled: true  # H2 Console을 사용할지 여부 (H2 Console은 H2 Database를 UI로 제공해주는 기능)
+      path: /h2-console  # H2 Console의 Path
+  
+  datasource:
+    driver-class-name: org.h2.Driver  # Database를 H2로 사용하겠다.
+    # url: jdbc:h2:~/food-pos  # H2 접속 정보
+    url: jdbc:h2:mem:food-pos  # H2 접속 정보
+    username: sa  # H2 접속 시 입력할 username 정보 (원하는 것으로 입력)
+    password:  # H2 접속 시 입력할 password 정보 (원하는 것으로 입력)
+    hikari:
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250 # 연결당 캐쉬가 준비할 명령문의 수 지정
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true # 서버측 준비된 명령문 지원, 성능 향상 도움됨
+      connectionTimeout: 30000
+      maximumPoolSize: 10
+      max-lifetime: 1799995
+      # minimum-idle: 1000
+      # poolName : HikariCP
+      readOnly : false
+  
+  devtools:
+    liverload:
+      enabled: true
+  
+  sql:
+    init:
+      encoding: UTF-8
+  
+logging:
+  level:
+    # root: debug
+    com.zaxxer.hikari.pool.HikariPool: debug
+    com.atoz_develop.mybatissample.repository: TRACE
+    org:
+#      hibernate: info
+      hibernate:
+        type:
+          descriptor:
+            sql: trace
+
+# Mabatis 환경 설정 :
+# 참조 : https://jydlove.tistory.com/49
+# xml 대신 속성값으로 설정한다
+mybatis:
+  type-aliases-package: com.berkley.food.store.pos.machine.foodback
+  configuration:
+    cache-enabled: true
+    use-column-label: true
+    use-generated-keys: false
+    map-underscore-to-camel-case: true
+    default-statement-timeout: 25000
+    jdbc-type-for-null: NULL
+  mapper-locations: classpath:/mapper/com/berkley/food/store/pos/machine/foodback/*Mapper.xml
