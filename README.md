@@ -6,9 +6,9 @@ This is the program on foot store pos machine.
 - 현업에서 최상의 퍼포먼스를 내기 위한 숙련도를 쌓는 프로젝트 중 하나인 프로젝트
 - 이 프로젝트는 모의 프로젝트를 이용하여 실제 실무력을 올리기 위해 개발을 진행 한다.
 - 이를 토대로 웹으로 개발을 하여 실제로 돌아가는 프로그램으로 구현
-- 현재 Typescript와 React-Query를 입문용도로 쓰이고 있음
+- 현재 Typescript와 React-Query를 익히고, H2 Database 활용도를 높인다
 - React를 이용하여 프론트엔드 적용, Spring Boot와 Java 로직을 이용하여 포스기 로직, 계산기 로직, 음식점 로직을 활용하여 적용
-- 실제 포스 프로그램 처럼 제작을 해본다.
+- 실제 포스 프로그램 처럼 제작을 해보고, 본인 정보와 은행 입출금 및 조회 알고리즘을 도입하여 잔액 계산을 해보자
 
 ## 개발 기간
 - 23년 9월 8일 ~
@@ -25,25 +25,26 @@ This is the program on foot store pos machine.
 - Window, Local 서버에서 활용 (Getting Start 업로드 예정)
 
 (2) 프론트 엔드
-- React, React-Query, Typescript, react-strap, bootstrap, scss/sass, React-Router
+- React, React-Query, Typescript, react-strap, bootstrap, scss/sass, React-Router, react-router-dom
 
 (3) 백엔드
 - Java, Spring Boot, My-Batis, H2 Database, Spring JDBC, 
 
 (4) App
-- React Native
+- React Native(옵션)
 
 ## 파급효과
 - 개발 숙련도가 보다 더 향상하는 계기가 되었다
 - Typescript에 대해 접할 수 있는 기회가 되었다
 - React-Query 사용하는 방법에 대해 숙지할 수 있다
 - Java기반으로 백엔드 로직을 구현 할 수 있다.
+- H2 Database를 활용 할 수 있다.
 - 웹 개발 부분에 있어 자신감 있게 개발 가능 할 수 있었다.
 
 
 
 ## 블로그 - 추후 업데이트
-- [(1) 요구사항 설정 및 설계]()
+- [(1) 요구사항 설정 및 설계](https://berkley.tistory.com/45)
 - [(2) 개발 설정 : front, Back-End]()
 - [(3) 화면단 개발(1) - 고객 정보 입력 개발 및 서비스 개발]()
 - [(4) 화면단 개발(2) - 계좌 처리 화면 서비스 개발]()
@@ -69,6 +70,7 @@ This is the program on foot store pos machine.
 - 전제 조건 : 고객입장이라고 생각하고, 고객의 통장 잔고를 확인하고, 통장 잔고가 부족할 시 구매할 수 없다는 문구 추가
 - 프론트에서는 고객 정보(나이, 성별, 전화번호, 주민번호 앞자리 6자리, 카드 비밀번호 4자리) 화면 보여주고 메뉴 선택
 - 백엔드에서는 선택한 메뉴와 고객의 정보와 잔고를 활용하여 프로그램 작성
+- Native App에서 프론트엔드 UI 비슷하게 화면 구성해보기
 
 
 ## Getting Start
