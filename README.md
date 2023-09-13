@@ -74,3 +74,9 @@ This is the program on foot store pos machine.
 
 
 ## Getting Start
+- 프론트엔드(React)
+- - 
+- 백엔드(Spring boot)
+- -
+- 모바일앱(React Native)
+- -
