@@ -6,7 +6,6 @@ spring:
     console:
       enabled: true  # H2 Console을 사용할지 여부 (H2 Console은 H2 Database를 UI로 제공해주는 기능)
       path: /h2-console  # H2 Console의 Path
-  
   datasource:
     driver-class-name: org.h2.Driver  # Database를 H2로 사용하겠다.
     # url: jdbc:h2:~/food-pos  # H2 접속 정보
@@ -25,15 +24,13 @@ spring:
       # minimum-idle: 1000
       # poolName : HikariCP
       readOnly : false
-  
   devtools:
     liverload:
       enabled: true
-  
   sql:
     init:
       encoding: UTF-8
-  
+      mode: always
 logging:
   level:
     # root: debug
@@ -50,7 +47,7 @@ logging:
 # 참조 : https://jydlove.tistory.com/49
 # xml 대신 속성값으로 설정한다
 mybatis:
-  type-aliases-package: com.berkley.food.store.pos.machine.foodback
+  type-aliases-package: com.berkley.food.store.pos.machine.foodback.domain.dto
   configuration:
     cache-enabled: true
     use-column-label: true
@@ -58,4 +55,4 @@ mybatis:
     map-underscore-to-camel-case: true
     default-statement-timeout: 25000
     jdbc-type-for-null: NULL
-  mapper-locations: classpath:/mapper/com/berkley/food/store/pos/machine/foodback/*Mapper.xml
+  mapper-locations: classpath:/mapper/*Mapper.xml
