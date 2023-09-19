@@ -1,4 +1,4 @@
-// import * as React from 'react';
+// import React from 'react';
 import './App.css';
 import {
   QueryClient,
@@ -12,6 +12,13 @@ import Index from './component/index';
 const queryClient = new QueryClient();
 
 const App = () => {
+
+  // useEffect(() => {
+  //   fetch('http://localhost:8080/api/food/test').then(
+  //     (res) => res.json(),
+  //   ).then(response => {console.log(response)})
+  // },[])
+
   return (
     // <QueryClientProvider client={queryClient}>
     // <AppComponent />
