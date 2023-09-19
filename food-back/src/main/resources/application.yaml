@@ -8,8 +8,8 @@ spring:
       path: /h2-console  # H2 Console의 Path
   datasource:
     driver-class-name: org.h2.Driver  # Database를 H2로 사용하겠다.
-    # url: jdbc:h2:~/food-pos  # H2 접속 정보
-    url: jdbc:h2:mem:food-pos  # H2 접속 정보
+    # url: jdbc:h2:~/food-pos  # H2 접속 정보 (embeded 모드)
+    url: jdbc:h2:mem:food-pos  # H2 접속 정보 (In-Memory 모드)
     username: sa  # H2 접속 시 입력할 username 정보 (원하는 것으로 입력)
     password:  # H2 접속 시 입력할 password 정보 (원하는 것으로 입력)
     hikari:
