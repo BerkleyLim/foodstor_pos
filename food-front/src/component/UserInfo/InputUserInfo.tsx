@@ -7,6 +7,7 @@ import { Card, CardHeader, Button, Form, Input, Label } from 'reactstrap'
 import { useNavigate } from 'react-router';
 const { useState, useEffect } = React;
 
+
 const InputUserInfo = () => {
   const [createForm, setCreateForm] = useState<any>();
   const navigate = useNavigate();
@@ -24,6 +25,9 @@ const InputUserInfo = () => {
   const submitUserInfo = () => {
     // 리액트 Query 작성
     alert(JSON.stringify(createForm));
+
+    
+
     navigate('/menuindex');
   }
 
