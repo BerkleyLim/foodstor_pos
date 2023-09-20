@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import styles from "./index.module.scss"
 import { Card, CardBody, CardHeader, Table } from 'reactstrap'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -6,8 +6,23 @@ import InputUserInfo from './UserInfo/InputUserInfo';
 import Bank from './bank/Bank';
 import MenuIndex from './menu/MenuIndex';
 import PosFood from './posfood/PosFood';
+// import { useQuery } from 'react-query';
 
 const Index = (): string | any => {
+
+  // const { isLoading, isError, data} = useQuery({
+  //   queryKey: ['repoData'],
+  //   queryFn: () => 
+  //   fetch('http://localhost:8080/api/food/test').then(
+  //     (res) => res.json(),
+  //   ),
+  // });
+
+  // if (isLoading) return 'Loading...';
+
+  // if (isError) return 'An error has occurred : ';
+
+  // console.log(data)
   return (
     <Router>
       <div className={`${styles?.componentContainer}`}>
@@ -21,7 +36,7 @@ const Index = (): string | any => {
 
         <br /><br /><br />
 
-        <Card body className={`${styles?.kioskLog}`}>
+        {/* <Card body className={`${styles?.kioskLog}`}>
           <CardHeader tag="h1">
             주문 정보 관련 로그
           </CardHeader>
@@ -84,7 +99,7 @@ const Index = (): string | any => {
               </tbody>
             </Table>
           </CardBody>
-        </Card>
+        </Card> */}
 
       </div>
     </Router>
