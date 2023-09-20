@@ -25,7 +25,7 @@ This is the program on foot store pos machine.
 - Window, Local 서버에서 활용 (Getting Start 업로드 예정)
 
 (2) 프론트 엔드
-- React, React-Query, Typescript, react-strap, bootstrap, scss/sass, React-Router, react-router-dom
+- React, React-Query, Typescript, react-strap, bootstrap, scss/sass, React-Router, react-router-dom, recoil
 
 (3) 백엔드
 - Java, Spring Boot, My-Batis, H2 Database, Spring JDBC, 
@@ -45,7 +45,7 @@ This is the program on foot store pos machine.
 
 ## 블로그 - 추후 업데이트
 - [(1) 요구사항 설정 및 설계](https://berkley.tistory.com/45)
-- [(2) 개발 설정 : front, Back-End]()
+- [(2) 개발 설정 : front, Back-End](https://berkley.tistory.com/46)
 - [(3) 화면단 개발(1) - 고객 정보 입력 개발 및 서비스 개발]()
 - [(4) 화면단 개발(2) - 계좌 처리 화면 서비스 개발]()
 - [(5) 화면단 개발(3) - 음식점 포스 프로그램 개발(키오스크) 및 서비스 개발]()
@@ -68,7 +68,7 @@ This is the program on foot store pos machine.
 - 선택 메뉴에 부가세 10%를 포함한 금액을 화면단에 출력하여 보내주세요.
 - - 예) 장어덮밥 가격 : 5500원, 감자튀김 : 4400원, 김밥 : 1100원
 - 전제 조건 : 고객입장이라고 생각하고, 고객의 통장 잔고를 확인하고, 통장 잔고가 부족할 시 구매할 수 없다는 문구 추가
-- 프론트에서는 고객 정보(나이, 성별, 전화번호, 주민번호 앞자리 6자리, 카드 비밀번호 4자리) 화면 보여주고 메뉴 선택
+- 시작은 고객 정보(나이, 성별, 전화번호, 주민번호 앞자리 6자리, 카드 비밀번호 4자리) 화면 보여주고 메뉴 선택
 - 백엔드에서는 선택한 메뉴와 고객의 정보와 잔고를 활용하여 프로그램 작성
 - Native App에서 프론트엔드 UI 비슷하게 화면 구성해보기
 
