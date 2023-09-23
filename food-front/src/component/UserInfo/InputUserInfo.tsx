@@ -5,12 +5,17 @@ import React from 'react'
 import styles from "../index.module.scss"
 import { Card, CardHeader, Button, Form, Input, Label } from 'reactstrap'
 import { useNavigate } from 'react-router';
+import { userInfoState } from '../../recoil/state/userInfoState'
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 const { useState, useEffect } = React;
 
 
 const InputUserInfo = () => {
   const [createForm, setCreateForm] = useState<any>();
   const navigate = useNavigate();
+
+  const userInfo = useRecoilValue(userInfoState);
+  const setUserInfo = useSetRecoilState(userInfoState);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -19,14 +24,15 @@ const InputUserInfo = () => {
       ...createForm,
       [name]: value,
     })
-    console.log(createForm)
+    // console.log(createForm)
   }
 
+  // 입력 이후, 회원 정보가 저장 되면서 recoil에 저장 후 header에 사용자 정보 저장
   const submitUserInfo = () => {
     // 리액트 Query 작성
     alert(JSON.stringify(createForm));
 
-    
+    setUserInfo(createForm)
 
     navigate('/menuindex');
   }

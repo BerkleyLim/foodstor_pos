@@ -1,14 +1,22 @@
-import React from 'react'
 import Header from '../Header'
 import styles from '../index.module.scss'
 import { Button, Col, Row } from 'reactstrap'
-import { Path, useNavigate } from 'react-router'
+import { useNavigate } from 'react-router'
+import { useResetRecoilState } from 'recoil'
+import { userInfoState } from '../../recoil/state/userInfoState'
 
 const MenuIndex = () => {
   const navigate = useNavigate();
-
+  
+  // default 값으로 reset용
+  const resetUserInfo = useResetRecoilState(userInfoState);
+  
   const pageMoveClick = (url:any) => {
     // Partial<Path> path = new Partial<>(url);
+    if (url === '/inputuserinfo') {
+      // recoil state 값 default 초기화
+      resetUserInfo();
+    }
     navigate(url);
   }
   return (
