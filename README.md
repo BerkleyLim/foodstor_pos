@@ -46,8 +46,8 @@ This is the program on foot store pos machine.
 ## 블로그 - 추후 업데이트
 - [(1) 요구사항 설정 및 설계](https://berkley.tistory.com/45)
 - [(2) 개발 설정 : front, Back-End](https://berkley.tistory.com/46)
-- [(3) 화면단 개발(1) - 고객 정보 입력 개발 및 서비스 개발]()
-- [(4) 화면단 개발(2) - 계좌 처리 화면 서비스 개발]()
+- [(3) 화면단 개발(1) - 고객 정보 입력 개발 및 서비스 개발](https://berkley.tistory.com/47)
+- [(4) 화면단 개발(2) - 계좌 처리 화면 서비스 개발](https://berkley.tistory.com/48)
 - [(5) 화면단 개발(3) - 음식점 포스 프로그램 개발(키오스크) 및 서비스 개발]()
 - [(6) 화면단 개발(4) - 고객 정보 헤더 추가 및 컴포넌트 구성 및 테스트 (샘플 데이터 활용)]()
 - [(7) 백엔드 인터페이스 개발(1) - H2 JDBC 연동 후 Database 설계]()
