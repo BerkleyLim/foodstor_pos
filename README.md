@@ -49,7 +49,7 @@ This is the program on foot store pos machine.
 - [(3) 화면단 개발(1) - 고객 정보 입력 개발 및 서비스 개발](https://berkley.tistory.com/47)
 - [(4) 화면단 개발(2) - 계좌 처리 화면 서비스 개발](https://berkley.tistory.com/48)
 - [(5) 화면단 개발(3) - 음식점 포스 프로그램 개발(키오스크) 및 서비스 개발](https://berkley.tistory.com/49)
-- [(6) 화면단 개발(4) - 이벤트 로그 컴포넌트 구성 (샘플 데이터 활용)]()
+- [(6) 화면단 개발(4) - 이벤트 로그 컴포넌트 구성](https://berkley.tistory.com/50)
 - [(7) 백엔드 인터페이스 개발(1) - H2 JDBC 연동 후 Database 설계]()
 - [(8) 백엔드 인터페이스 개발(2) - 고객 정보 인터페이스 개발 후 테스트]()
 - [(9) 백엔드 인터페이스 개발(3) - 계좌 처리 인터페이스 개발 후 테스트]()
