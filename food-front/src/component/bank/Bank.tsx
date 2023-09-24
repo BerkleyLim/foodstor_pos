@@ -1,11 +1,16 @@
 import Header from '../Header'
 import styles from '../index.module.scss'
 import { Button, Card, CardBody, Col, Row } from 'reactstrap'
-import { useRecoilState } from 'recoil'
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
 import { userBankInfoState } from "../../recoil/state/userBankInfoState"
+import { logInfoState } from '../../recoil/state/logInfoState'
 
 const Bank = () => {
   const [bankInfo, setBankInfo] = useRecoilState(userBankInfoState);
+
+    /** 로그값 추가 */
+    const logInfo: any[] = useRecoilValue(logInfoState);
+    const setLogInfo = useSetRecoilState(logInfoState);
 
   console.log(bankInfo)
   const decrementMoney = () => {
@@ -14,6 +19,23 @@ const Bank = () => {
       userMoney: bankInfo.userMoney - 100000
     }
     setBankInfo(tempBankInfo)
+
+    /** 로그에 담는다 */
+    const createLog: any = {
+      lno: logInfo.length + 1,
+      pageNo: 3,
+      pageEventTitle: "계좌",
+      pageEventView: "출금 10만원, 남은 잔액 : " + (bankInfo.userMoney - 100000) + "원",
+      requestParam: JSON.stringify(tempBankInfo),
+      responseStatus: 200,
+      userAgent: 'windows11',
+      responseParam: JSON.stringify(tempBankInfo),
+    }
+
+    setLogInfo(
+      [...logInfo,
+      createLog]
+    )
   }
   const incrementMoney = () => {
     let tempBankInfo = {
@@ -21,6 +43,23 @@ const Bank = () => {
       userMoney: bankInfo.userMoney + 100000
     }
     setBankInfo(tempBankInfo)
+
+    /** 로그에 담는다 */
+    const createLog: any = {
+      lno: logInfo.length + 1,
+      pageNo: 3,
+      pageEventTitle: "계좌",
+      pageEventView: "출금 10만원, 남은 잔액 : " + (bankInfo.userMoney + 100000) + "원",
+      requestParam: JSON.stringify(tempBankInfo),
+      responseStatus: 200,
+      userAgent: 'windows11',
+      responseParam: JSON.stringify(tempBankInfo),
+    }
+
+    setLogInfo(
+      [...logInfo,
+      createLog]
+    )
   }
 
   return (

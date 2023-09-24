@@ -2,13 +2,18 @@ import React from 'react'
 import { Button, Card, CardBody, Col, Row } from 'reactstrap'
 import styles from "../index.module.scss"
 import Header from '../Header'
-import { useRecoilState, useRecoilValue } from 'recoil'
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
 import { foodState } from "../../recoil/state/foodState"
 import { userBankInfoState } from "../../recoil/state/userBankInfoState"
+import { logInfoState } from '../../recoil/state/logInfoState'
 
 const PosFood = () => {
   const food = useRecoilValue(foodState);
   const [bankInfo, setBankInfo] = useRecoilState(userBankInfoState);
+
+  /** 로그값 추가 */
+  const logInfo: any[] = useRecoilValue(logInfoState);
+  const setLogInfo = useSetRecoilState(logInfoState);
 
   // 구입 시 선택
   const purchaseFood = (f:any | Object) => {
@@ -16,6 +21,26 @@ const PosFood = () => {
       bno: bankInfo?.bno,
       userMoney: bankInfo.userMoney - f?.foodPrice - f?.VAT
     }
+
+    
+    /** 구입의 대한 로그에 담는다 */
+    const createLog: any = {
+      lno: logInfo.length + 1,
+      pageNo: 4,
+      pageEventTitle: "음식 주문",
+      pageEventView: "음식 주문 : " + f?.foodMenu + "["+  (f?.foodPrice + f?.VAT) +"원], 잔액["+tempBankInfo.userMoney+"원]",
+      requestParam: JSON.stringify(f),
+      responseStatus: 200,
+      userAgent: 'windows11',
+      responseParam: JSON.stringify(f),
+    }
+
+    setLogInfo(
+      [...logInfo,
+      createLog]
+    )
+
+
     setBankInfo(tempBankInfo)
   }
   return (

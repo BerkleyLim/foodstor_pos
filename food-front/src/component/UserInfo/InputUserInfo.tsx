@@ -3,8 +3,20 @@ import styles from "../index.module.scss"
 import { Card, CardHeader, Button, Form, Input, Label } from 'reactstrap'
 import { useNavigate } from 'react-router';
 import { userInfoState } from '../../recoil/state/userInfoState'
-import { useSetRecoilState } from 'recoil';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { logInfoState } from '../../recoil/state/logInfoState';
 const { useState } = React;
+
+// type LogInfo = {
+//   lno: number | null,
+//   pageNo: number | null,
+//   pageEventTitle: string | null,
+//   pageEventView: string | null,
+//   requestParam: any,
+//   responseStatus: number | null,
+//   userAgent: string | null,
+//   responseParam: any,
+// }
 
 
 const InputUserInfo = () => {
@@ -12,6 +24,10 @@ const InputUserInfo = () => {
   const navigate = useNavigate();
 
   const setUserInfo = useSetRecoilState(userInfoState);
+
+  /** 로그값 추가 */
+  const logInfo: any[] = useRecoilValue(logInfoState);
+  const setLogInfo = useSetRecoilState(logInfoState);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -21,13 +37,29 @@ const InputUserInfo = () => {
       [name]: value,
     })
   }
-
   // 입력 이후, 회원 정보가 저장 되면서 recoil에 저장 후 header에 사용자 정보 저장
   const submitUserInfo = () => {
     // 리액트 Query 작성
     alert(JSON.stringify(createForm));
 
     setUserInfo(createForm)
+
+    /** 로그에 담는다 */
+    const createLog: any = {
+      lno: logInfo.length + 1,
+      pageNo: 1,
+      pageEventTitle: "로그인",
+      pageEventView: "로그인 성공",
+      requestParam: JSON.stringify(createForm),
+      responseStatus: 200,
+      userAgent: 'windows11',
+      responseParam: JSON.stringify(createForm),
+    }
+
+    setLogInfo(
+      [...logInfo,
+      createLog]
+    )
 
     navigate('/menuindex');
   }
