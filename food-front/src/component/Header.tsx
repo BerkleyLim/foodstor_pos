@@ -1,17 +1,11 @@
-import React from 'react'
 import { Col, Row } from 'reactstrap'
-// import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { useRecoilValue } from 'recoil';
 import styles from "./index.module.scss"
 import { userInfoState } from '../recoil/state/userInfoState'
 
 
-// const Header = ({userInfo}:any) => {
-  // console.log(userInfo)
 const Header = () => {
   const userInfo = useRecoilValue(userInfoState);
-  // const userInfo = useRecoilValue(UserInfoState);
-  // const setUserInfo = useSetRecoilState(userInfoState);
   console.log(userInfo)
   return (
     <div className={`${styles?.headerComponent} mb-5`}>

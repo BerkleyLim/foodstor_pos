@@ -1,20 +1,16 @@
 import React from 'react'
-// import {
-//   useQuery,
-// } from 'react-query'
 import styles from "../index.module.scss"
 import { Card, CardHeader, Button, Form, Input, Label } from 'reactstrap'
 import { useNavigate } from 'react-router';
 import { userInfoState } from '../../recoil/state/userInfoState'
-import { useRecoilValue, useSetRecoilState } from 'recoil';
-const { useState, useEffect } = React;
+import { useSetRecoilState } from 'recoil';
+const { useState } = React;
 
 
 const InputUserInfo = () => {
   const [createForm, setCreateForm] = useState<any>();
   const navigate = useNavigate();
 
-  const userInfo = useRecoilValue(userInfoState);
   const setUserInfo = useSetRecoilState(userInfoState);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,7 +20,6 @@ const InputUserInfo = () => {
       ...createForm,
       [name]: value,
     })
-    // console.log(createForm)
   }
 
   // 입력 이후, 회원 정보가 저장 되면서 recoil에 저장 후 header에 사용자 정보 저장
@@ -66,10 +61,6 @@ const InputUserInfo = () => {
         <Input className="form-control fw-bold border" name="userPassword" onChange={onChange} />
         <Label className="">카드비밀번호(4자리)</Label>
       </Form>
-      {/* <Form className="form-floating mb-3">
-          <Input className="form-control fw-bold border" name="account" onChange={onChange}/>
-          <Label className="">잔액</Label>
-        </Form> */}
       <Button color={"primary"} onClick={() => submitUserInfo()}>
         제 출
       </Button>
