@@ -2,7 +2,7 @@ import Header from '../Header'
 import styles from '../index.module.scss'
 import { Button, Card, CardBody, Col, Row } from 'reactstrap'
 import { useRecoilState } from 'recoil'
-import { userBankInfoState } from "../../recoil/state/userBankInfo"
+import { userBankInfoState } from "../../recoil/state/userBankInfoState"
 
 const Bank = () => {
   const [bankInfo, setBankInfo] = useRecoilState(userBankInfoState);
