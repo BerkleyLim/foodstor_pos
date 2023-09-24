@@ -31,7 +31,7 @@ This is the program on foot store pos machine.
 - Java, Spring Boot, My-Batis, H2 Database, Spring JDBC, 
 
 (4) App
-- React Native(옵션)
+- React Native(옵션), @react-navigation/stack, @react-navigaation/native, react-native-gesture-handler, react-native-reanimated, react-native-screens, react-native-safe-area-context, @react-native-community/masked-view
 
 ## 파급효과
 - 개발 숙련도가 보다 더 향상하는 계기가 되었다
