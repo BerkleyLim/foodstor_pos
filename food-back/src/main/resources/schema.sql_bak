@@ -43,19 +43,14 @@ CREATE TABLE t_food COMMENT '음식정보'  (
   PRIMARY KEY (fno)
 );
 
--- 이벤트 관련 로그 저장
+-- 이벤트 관련 로그 저장(사용자용)
 DROP TABLE IF EXISTS t_log;
 
--- 정해지면 추가 할 것
 CREATE TABLE t_log COMMENT '로그 저장'  (
   lno bigint not null auto_increment COMMENT '로그 인덱스 번호',
   uno bigint COMMENT '유저 인덱스 번호',
   pageNo bigint COMMENT '페이지 이벤트 번호',
   pageEventTitle varchar(255) COMMENT '페이지 별 이벤트 목록',
   pageEventView varchar(255) COMMENT '페이지 별 이벤트 상세',
-  requestParam text COMMENT '요청 파라미터',
-  responseStatus bigint COMMENT '요청 값',
-  userAgent varchar(255) COMMENT '사용자 기기 운영체제 정보',
-  responseParam text COMMENT '응답 파라미터',
   PRIMARY KEY (lno)
 );
