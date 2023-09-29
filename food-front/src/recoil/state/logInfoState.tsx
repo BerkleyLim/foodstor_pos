@@ -4,6 +4,7 @@ export const logInfoState = atom({
   key: 'logInfo',
   default: [{
       lno: 1,
+      uno: 1,
       pageNo: 1,
       pageEventTitle: "로그인",
       pageEventView: "로그인 진입",
