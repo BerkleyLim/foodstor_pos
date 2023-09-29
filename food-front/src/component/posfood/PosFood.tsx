@@ -26,13 +26,10 @@ const PosFood = () => {
     /** 구입의 대한 로그에 담는다 */
     const createLog: any = {
       lno: logInfo.length + 1,
+      uno: 1,
       pageNo: 4,
       pageEventTitle: "음식 주문",
       pageEventView: "음식 주문 : " + f?.foodMenu + "["+  (f?.foodPrice + f?.VAT) +"원], 잔액["+tempBankInfo.userMoney+"원]",
-      requestParam: JSON.stringify(f),
-      responseStatus: 200,
-      userAgent: 'windows11',
-      responseParam: JSON.stringify(f),
     }
 
     setLogInfo(

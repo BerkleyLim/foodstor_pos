@@ -8,7 +8,7 @@ const LogInfo = () => {
   const logInfo = useRecoilValue(logInfoState);
   return (
     <Card body className={`${styles?.kioskLog}`}>
-      <CardHeader tag="h1">주문 정보 관련 로그</CardHeader>
+      <CardHeader tag="h1">주문 정보 관련 로그(사용자용)</CardHeader>
       <CardBody>
         <Table border={1} className={`w-100`}>
           <thead className={`w-100`}>
@@ -16,10 +16,6 @@ const LogInfo = () => {
               <th>번호(lno)</th>
               <th>사용 메뉴(selectNumber)</th>
               <th>이벤트(event)</th>
-              <th>요청 파라미터(requestParam)</th>
-              <th>상태값(status)</th>
-              <th>기종(userAgent)</th>
-              <th>응답 파라미터(responseParam)</th>
             </tr>
           </thead>
           <tbody>
@@ -28,14 +24,6 @@ const LogInfo = () => {
                 <td>{log?.lno}</td>
                 <td>{log?.pageNo} - {log?.pageEventTitle}</td>
                 <td>{log?.pageEventView}</td>
-                <td>
-                  {log?.requestParam}
-                </td>
-                <td>{log?.responseStatus}</td>
-                <td>{log?.userAgent}</td>
-                <td>
-                  {log?.responseParam}
-                </td>
               </tr>
             )}
             {/* <tr>

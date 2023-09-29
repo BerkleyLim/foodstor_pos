@@ -47,13 +47,10 @@ const Bank = () => {
     /** 로그에 담는다 */
     const createLog: any = {
       lno: logInfo.length + 1,
+      uno: 1,
       pageNo: 3,
       pageEventTitle: "계좌",
-      pageEventView: "출금 10만원, 남은 잔액 : " + (bankInfo.userMoney + 100000) + "원",
-      requestParam: JSON.stringify(tempBankInfo),
-      responseStatus: 200,
-      userAgent: 'windows11',
-      responseParam: JSON.stringify(tempBankInfo),
+      pageEventView: "입금 10만원, 남은 잔액 : " + (bankInfo.userMoney + 100000) + "원",
     }
 
     setLogInfo(

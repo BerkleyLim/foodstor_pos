@@ -47,13 +47,10 @@ const InputUserInfo = () => {
     /** 로그에 담는다 */
     const createLog: any = {
       lno: logInfo.length + 1,
+      uno: 1,
       pageNo: 1,
       pageEventTitle: "로그인",
       pageEventView: "로그인 성공",
-      requestParam: JSON.stringify(createForm),
-      responseStatus: 200,
-      userAgent: 'windows11',
-      responseParam: JSON.stringify(createForm),
     }
 
     setLogInfo(
