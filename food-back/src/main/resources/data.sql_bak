@@ -17,11 +17,11 @@ insert into t_food (food_menu, food_price, VAT) values ('로스트비프',15000,
 insert into t_food (food_menu, food_price, VAT) values ('감자튀김',4000,400);
 
 
--- -- 로그 insert 구문
--- insert into t_log 
--- (uno, pageNo, pageEventTitle, pageEventView, requestParam, responseStatus, userAgent, responseParam) 
--- values 
--- (1, 1, '로그인', '로그인 진입', '', 200, 'windows11', '');
+-- 로그 insert 구문
+insert into t_log 
+(uno, pageNo, pageEventTitle, pageEventView, requestParam, responseStatus, userAgent, responseParam) 
+values 
+(1, 1, '로그인', '로그인 진입', '', 200, 'windows11', '');
 
 
 -- 회원 정보 테스트
