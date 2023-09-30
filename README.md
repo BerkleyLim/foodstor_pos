@@ -40,6 +40,7 @@ This is the program on foot store pos machine.
 - Java기반으로 백엔드 로직을 구현 할 수 있다.
 - H2 Database를 활용 할 수 있다.
 - 웹 개발 부분에 있어 자신감 있게 개발 가능 할 수 있었다.
+- 마지막으로 React Native를 활용하여 Android OS와 연동 가능 (IOS는 차후 공부 예정)
 
 
 
@@ -57,9 +58,11 @@ This is the program on foot store pos machine.
 - [(11) 백엔드 인터페이스 개발(5) - 이벤트 로그 Interceptor를 이용하여 저장 후 테스트]()
 - [(12) 프론트엔드 백엔드 API 연동(1)]()
 - [(13) 프론트엔드 백엔드 API 연동(2)]()
+- [(14) 버그 수정 및 코드 정리 리팩토링]()
 - [별첨1 - React-Query 사용 방법]()
 - [별첨2 - Spring Boot H2 Database 사용 방법]()
 - [별첨3 - React Native를 이용한 Native App 개발]()
+- [별첨4 - React Native와 Java 서버 API 연동]()
 
 ## 요구사항
 - 고객사께서 직접 음식점을 차리고 있는 상황이다.
