@@ -19,10 +19,9 @@ insert into t_food (food_menu, food_price, VAT) values ('감자튀김',4000,400)
 
 -- 로그 insert 구문
 insert into t_log 
-(uno, pageNo, pageEventTitle, pageEventView) 
+(uno, page_no, page_event_title, page_event_view, crt_time) 
 values 
-(1, 1, '로그인', '로그인 진입');
-
+(1, 1, '로그인', '로그인 진입', now());
 
 -- 회원 정보 테스트
 select * from t_user;
