@@ -7,18 +7,6 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { logInfoState } from '../../recoil/state/logInfoState';
 const { useState } = React;
 
-// type LogInfo = {
-//   lno: number | null,
-//   pageNo: number | null,
-//   pageEventTitle: string | null,
-//   pageEventView: string | null,
-//   requestParam: any,
-//   responseStatus: number | null,
-//   userAgent: string | null,
-//   responseParam: any,
-// }
-
-
 const InputUserInfo = () => {
   const [createForm, setCreateForm] = useState<any>();
   const navigate = useNavigate();
@@ -28,6 +16,7 @@ const InputUserInfo = () => {
   /** 로그값 추가 */
   const logInfo: any[] = useRecoilValue(logInfoState);
   const setLogInfo = useSetRecoilState(logInfoState);
+  const today = new Date();
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -51,11 +40,12 @@ const InputUserInfo = () => {
       pageNo: 1,
       pageEventTitle: "로그인",
       pageEventView: "로그인 성공",
+      crtTime: JSON.stringify(today),
     }
 
     setLogInfo(
       [...logInfo,
-      createLog]
+        createLog]
     )
 
     navigate('/menuindex');

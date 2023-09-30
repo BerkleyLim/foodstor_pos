@@ -1,5 +1,7 @@
 import {atom} from 'recoil'
 
+const today = new Date();
+
 export const logInfoState = atom({
   key: 'logInfo',
   default: [{
@@ -8,6 +10,7 @@ export const logInfoState = atom({
       pageNo: 1,
       pageEventTitle: "로그인",
       pageEventView: "로그인 진입",
+      crtTime: JSON.stringify(today),
   }],
 });
 
@@ -29,6 +32,7 @@ export const logInfoState = atom({
 //   pageNo: number | null,
 //   pageEventTitle: string | null,
 //   pageEventView: string | null,
+//   crtTime: string | null,
 // }
 
 // https://velog.io/@juno7803/Recoil-Recoil-200-%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0

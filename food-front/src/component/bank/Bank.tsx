@@ -8,9 +8,10 @@ import { logInfoState } from '../../recoil/state/logInfoState'
 const Bank = () => {
   const [bankInfo, setBankInfo] = useRecoilState(userBankInfoState);
 
-    /** 로그값 추가 */
-    const logInfo: any[] = useRecoilValue(logInfoState);
-    const setLogInfo = useSetRecoilState(logInfoState);
+  /** 로그값 추가 */
+  const logInfo: any[] = useRecoilValue(logInfoState);
+  const setLogInfo = useSetRecoilState(logInfoState);
+  const today = new Date();
 
   console.log(bankInfo)
   const decrementMoney = () => {
@@ -26,15 +27,12 @@ const Bank = () => {
       pageNo: 3,
       pageEventTitle: "계좌",
       pageEventView: "출금 10만원, 남은 잔액 : " + (bankInfo.userMoney - 100000) + "원",
-      requestParam: JSON.stringify(tempBankInfo),
-      responseStatus: 200,
-      userAgent: 'windows11',
-      responseParam: JSON.stringify(tempBankInfo),
+      crtTime: JSON.stringify(today),
     }
 
     setLogInfo(
       [...logInfo,
-      createLog]
+        createLog]
     )
   }
   const incrementMoney = () => {
@@ -51,11 +49,12 @@ const Bank = () => {
       pageNo: 3,
       pageEventTitle: "계좌",
       pageEventView: "입금 10만원, 남은 잔액 : " + (bankInfo.userMoney + 100000) + "원",
+      crtTime: JSON.stringify(today),
     }
 
     setLogInfo(
       [...logInfo,
-      createLog]
+        createLog]
     )
   }
 
@@ -65,15 +64,15 @@ const Bank = () => {
 
       <div className={`${styles?.container} ${styles?.bankContainer}`}>
         <h1>계좌 조회</h1>
-        <div style={{ textAlign:"right" }}>
-          <Button onClick={() => {window.history.back()}}>뒤로가기</Button>
+        <div style={{ textAlign: "right" }}>
+          <Button onClick={() => { window.history.back() }}>뒤로가기</Button>
         </div>
         <Card className={``}>
           <CardBody>
             <div className={styles?.moneyTextInfo}>현재 잔액 : <span className={styles?.moneyText}>{bankInfo?.userMoney}</span>원</div>
-            <br/><br/><br/>
+            <br /><br /><br />
             <span className={styles?.info}>※ 입출금은 100,000원 단위로 증감 합니다..</span>
-            <br/><br/>
+            <br /><br />
             <Row className={`justify-align`}>
               <Col sm={{ offset: 1, size: "auto" }}>
                 <Button className={`w-100`} onClick={() => incrementMoney()}>입금</Button>
