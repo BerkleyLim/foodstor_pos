@@ -7,7 +7,7 @@ insert into t_user
 values ('Berkley', 29, '남', '01011111111', '880401', '1111');
 
 -- 회원 은행 계좌 관련 구문
-insert into t_account (user_money) values (100000);
+insert into t_account (uno, user_money) values (1, 100000);
 
 -- 음식 메뉴 insert 구문
 insert into t_food (food_menu, food_price, VAT) values ('장어덮밥',5000, 500);

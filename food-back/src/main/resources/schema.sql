@@ -26,9 +26,10 @@ CREATE TABLE t_user COMMENT '회원'  (
 DROP TABLE IF EXISTS t_account;
 
 CREATE TABLE t_account COMMENT '은행계좌'  (
-  uno bigint not null auto_increment COMMENT '회원 은행 계좌 인덱스',
+  ano bigint not null auto_increment COMMENT '은행 계좌 테이블 인덱스',
+  uno bigint COMMENT '회원 은행 계좌 인덱스',
   user_money bigint COMMENT '회원 계좌 잔액 정보',
-  PRIMARY KEY (uno)
+  PRIMARY KEY (ano)
 );
 
 
