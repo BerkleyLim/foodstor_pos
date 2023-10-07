@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.berkley.food.store.pos.machine.foodback.mapper.FoodMapper">
-  <select id="testSQL" resultType="TestDto">
+  <!-- <select id="testSQL" resultType="TestDto">
     select * from t_test
+  </select> -->
+
+  <select id="selectFood" resultType="FoodDto">
+    select * from T_Food
   </select>
+
+  
 </mapper>
