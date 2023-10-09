@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.berkley.food.store.pos.machine.foodback.mapper.AccountMapper">
+  <select id="selectAccount" resultType="AccountDto">
+    select * from T_ACCOUNT
+  </select>
+  
+  <insert id="insertAccount">
+    insert into T_ACCOUNT
+      (user_name, user_age, user_sex, user_phone, user_number, user_card_password)
+    values (#{userName}, #{userAge}, #{userSex}, #{userPhone}, #{userNumber}, #{userCardPassword})
+  </insert>
+
+  <delete id="deleteAccount">
+    delete from T_ACCOUNT
+  </delete>
+  <!-- where uno = #{uno} -->
+
+  <update id="changeInOutMoney">
+    update  T_ACCOUNT
+      set user_money = ((select user_money from T_ACCOUNT where uno=#{uno}) - #{money})
+    where uno = #{uno};
+  </update>
+
+  <update id="purchaseOutMoney">
+    update  T_ACCOUNT
+      set user_money = (
+          (select user_money from T_ACCOUNT where uno=#{uno})
+        - (select FOOD_PRICE from T_FOOD where fno=#{fno})
+        - (select VAT from T_FOOD where fno=#{fno})
+      )
+    where uno = #{uno};
+  </update>
+
+
+</mapper>
