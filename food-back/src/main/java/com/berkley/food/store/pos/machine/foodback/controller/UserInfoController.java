@@ -40,7 +40,7 @@ public class UserInfoController {
 
   /**
    * @param userInfoDto : 회원 정보 입력 내용 추가
-   * @return : 삽입 성공 값
+   * @return : 삭제 성공 값
    */
   @PostMapping("/delete/user/info")
   public int deleteUserInfo() {
