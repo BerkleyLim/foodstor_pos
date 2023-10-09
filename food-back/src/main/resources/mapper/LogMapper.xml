@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.berkley.food.store.pos.machine.foodback.mapper.LogMapper">
+  <select id="selectLog" resultType="LogDto">
+    select * from T_LOG
+  </select>
+  
+  <insert id="insertLog">
+    insert into t_log 
+    (uno, page_no, page_event_title, page_event_view, crt_time) 
+    values 
+    (#{uno}, #{pageNo}, #{pageEventTitle}, #{pageEventView}, now());
+  </insert>
+
+  <delete id="deleteLog">
+    delete from T_LOG
+  </delete>
+  <!-- where uno = #{uno} -->
+</mapper>
