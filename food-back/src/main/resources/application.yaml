@@ -47,7 +47,7 @@ logging:
 # 참조 : https://jydlove.tistory.com/49
 # xml 대신 속성값으로 설정한다
 mybatis:
-  type-aliases-package: com.berkley.food.store.pos.machine.foodback.domain.dto
+  type-aliases-package: com.berkley.food.store.pos.machine.foodback.domain.dto.*
   configuration:
     cache-enabled: true
     use-column-label: true
