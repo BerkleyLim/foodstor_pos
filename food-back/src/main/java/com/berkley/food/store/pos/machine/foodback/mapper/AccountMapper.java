@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
-import com.berkley.food.store.pos.machine.foodback.domain.dto.AccountDto;
+import com.berkley.food.store.pos.machine.foodback.domain.dto.account.AccountDto;
 
 @Repository
 @Mapper
@@ -15,4 +15,9 @@ public interface AccountMapper {
   int insertAccount(AccountDto accountDto);
 
   int deleteAccount();
+
+  int changeInOutMoney();
+
+  int purchaseOutMoney();
+
 }
