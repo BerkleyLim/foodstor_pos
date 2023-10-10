@@ -1,4 +1,4 @@
-package com.berkley.food.store.pos.machine.foodback.domain.dto;
+package com.berkley.food.store.pos.machine.foodback.domain.dto.userinfo;
 
 import lombok.Data;
 

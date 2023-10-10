@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.berkley.food.store.pos.machine.foodback.domain.dto.LogDto;
+import com.berkley.food.store.pos.machine.foodback.domain.dto.log.LogDto;
 import com.berkley.food.store.pos.machine.foodback.mapper.LogMapper;
 
 @Service

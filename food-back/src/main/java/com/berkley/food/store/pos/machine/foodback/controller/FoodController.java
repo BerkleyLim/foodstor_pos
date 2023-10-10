@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.berkley.food.store.pos.machine.foodback.domain.dto.FoodDto;
+import com.berkley.food.store.pos.machine.foodback.domain.dto.food.FoodDto;
 import com.berkley.food.store.pos.machine.foodback.service.FoodService;
 
 @RestController
