@@ -79,9 +79,50 @@ This is the program on foot store pos machine.
 
 
 ## Getting Start
+- 공통 : 먼저 리파지토리를 받는다.
+```
+$ git clone https://github.com/BerkleyLim/foodstor_pos.git
+```
+
 - 프론트엔드(React)
-- - 
+(1) front에 먼저 들어간다.
+```
+$ cd *front
+```
+
+(2) node_module 다운로드 받는다. (본인이 nodejs 16.18.0이 아닐 경우, scss 버전 직접 맞출 것)
+```
+$ npm install
+```
+
+(3) 이후, front 서버 실행해본다.
+```
+$ npm run start
+
+혹은
+
+$ npm run build; serve -s build  #배포모드
+```
+
 - 백엔드(Spring boot)
-- -
+(1) back에 먼저 들어간다.
+```
+$ cd *back
+```
+
+(2) gradle 명령어를 먼저 수행
+```
+$ gradle
+```
+
+(3) 이후 스프링부트 실행 (Java 11에서 실행 추천 - 현업에서 주로 쓰이는 버전)
+```
+$ gradle bootrun
+
+or
+
+$ gradle build; cd build/libs; java -jar food-back-0.0.1-SNAPSHOT.jar 
+# food-back*.jar 파일은 이름이 다를 수 있다. ex) food-back-0.0.2-SNAPSHOT.jar 도 될 수 있음
+```
 - 모바일앱(React Native) : Android
-- -
+- (차후 업로드 예정)
