@@ -15,4 +15,7 @@ public interface UserInfoMapper {
   int insertUserInfo(UserInfoDto userInfoDto);
 
   int deleteUserInfo();
+
+  // 사용자 생성 시 한정으로 마지막 로그 출력
+  Long selectLastRowUno();
 }

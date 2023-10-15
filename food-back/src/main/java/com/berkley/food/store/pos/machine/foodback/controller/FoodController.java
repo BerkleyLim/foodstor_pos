@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.berkley.food.store.pos.machine.foodback.domain.dto.food.FoodDto;
+import com.berkley.food.store.pos.machine.foodback.service.AccountService;
 import com.berkley.food.store.pos.machine.foodback.service.FoodService;
 
 @RestController
@@ -15,11 +17,8 @@ import com.berkley.food.store.pos.machine.foodback.service.FoodService;
 public class FoodController {
   @Autowired
   FoodService foodService;
-
-  // @GetMapping("/test")
-  // public List<TestDto> testSQL() {
-  // return foodService.testSQL();
-  // }
+  @Autowired
+  AccountService accountService;
 
   /**
    * API : 음식 조회 서비스
@@ -29,6 +28,17 @@ public class FoodController {
   @GetMapping("/")
   public List<FoodDto> selectFood() {
     return foodService.selectFood();
+  }
+
+  /**
+   * API : 음식 구매
+   * 
+   * @return : 전체 회원 정보 조회 추가 (연습용 프로젝트이므로, 실질적으로 1개만 저장 됨)
+   */
+  @PostMapping("/purchase")
+  public int purchaseFoodAccount() {
+    return 1;
+    // return foodService.selectFood();
   }
 
 }

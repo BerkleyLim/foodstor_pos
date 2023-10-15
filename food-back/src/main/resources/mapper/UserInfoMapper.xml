@@ -15,4 +15,10 @@
     delete from T_USER
   </delete>
   <!-- where uno = #{uno} -->
+
+
+  <!-- 사용자 생성 시 한정으로 가장 최근 생성 된 테이블 중 uno 마지막 로그 출력 -->
+  <select id="selectLastRowUno" resultType="Long">
+    select uno from T_USER order by uno desc limit 1;
+  </select>
 </mapper>

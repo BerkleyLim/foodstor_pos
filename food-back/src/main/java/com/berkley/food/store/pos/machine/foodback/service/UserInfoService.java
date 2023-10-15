@@ -39,4 +39,13 @@ public class UserInfoService {
   public int insertUserInfo(UserInfoDto userInfoDto) {
     return userInfoMapper.insertUserInfo(userInfoDto);
   }
+
+  /**
+   * 사용자 생성 시 한정으로 가장 최근 생성 된 테이블 중 uno 마지막 로그 출력
+   * 
+   * @return
+   */
+  public Long selectLastRowUno() {
+    return userInfoMapper.selectLastRowUno();
+  }
 }
