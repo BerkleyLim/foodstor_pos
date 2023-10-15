@@ -7,8 +7,8 @@
   
   <insert id="insertAccount">
     insert into T_ACCOUNT
-      (user_name, user_age, user_sex, user_phone, user_number, user_card_password)
-    values (#{userName}, #{userAge}, #{userSex}, #{userPhone}, #{userNumber}, #{userCardPassword})
+      (uno, user_money)
+    values (#{uno}, #{userMoney})
   </insert>
 
   <delete id="deleteAccount">
