@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import com.berkley.food.store.pos.machine.foodback.domain.dto.account.AccountDto;
+import com.berkley.food.store.pos.machine.foodback.domain.dto.account.AccountInOutMoneyDto;
+import com.berkley.food.store.pos.machine.foodback.domain.dto.account.AccountPurchaseMoneyDto;
 
 @Repository
 @Mapper
@@ -16,8 +18,8 @@ public interface AccountMapper {
 
   int deleteAccount();
 
-  int changeInOutMoney();
+  int changeInOutMoney(AccountInOutMoneyDto accountInOutMoneyDto);
 
-  int purchaseOutMoney();
+  int purchaseOutMoney(AccountPurchaseMoneyDto AccountPurchaseMoneyDto);
 
 }

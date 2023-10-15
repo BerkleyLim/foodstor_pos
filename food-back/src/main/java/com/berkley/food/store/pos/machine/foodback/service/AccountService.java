@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.berkley.food.store.pos.machine.foodback.domain.dto.account.AccountDto;
+import com.berkley.food.store.pos.machine.foodback.domain.dto.account.AccountInOutMoneyDto;
+import com.berkley.food.store.pos.machine.foodback.domain.dto.account.AccountPurchaseMoneyDto;
 import com.berkley.food.store.pos.machine.foodback.mapper.AccountMapper;
 
 @Service
@@ -29,6 +31,34 @@ public class AccountService {
    */
   public int deleteAccount() {
     return accountMapper.deleteAccount();
+  }
+
+  /**
+   * 계좌 입금
+   * 
+   * @return
+   */
+  public int changeInMoneyAccount(AccountInOutMoneyDto accountInOutMoneyDto) {
+    return accountMapper.changeInOutMoney(accountInOutMoneyDto);
+  }
+
+  /**
+   * 계좌 출금
+   * 
+   * @return
+   */
+  public int changeOutMoneyAccount(AccountInOutMoneyDto accountInOutMoneyDto) {
+    accountInOutMoneyDto.setMoney(-accountInOutMoneyDto.getMoney());
+    return accountMapper.changeInOutMoney(accountInOutMoneyDto);
+  }
+
+  /**
+   * 음식 주문 시 출금
+   * 
+   * @return
+   */
+  public int PurchaseMoneyAccount(AccountPurchaseMoneyDto accountPurchaseMoneyDto) {
+    return accountMapper.purchaseOutMoney(accountPurchaseMoneyDto);
   }
 
   /**
