@@ -65,7 +65,7 @@ public class AccountService {
    * 
    * @return
    */
-  public int insertAccount(AccountDto userInfoDto) {
-    return accountMapper.insertAccount(userInfoDto);
+  public int insertAccount(AccountDto accountDto) {
+    return accountMapper.insertAccount(accountDto);
   }
 }

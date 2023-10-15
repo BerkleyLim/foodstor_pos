@@ -19,6 +19,6 @@ public interface AccountMapper {
 
   int changeInOutMoney(AccountDto accountDto);
 
-  int purchaseOutMoney(AccountPurchaseMoneyDto AccountPurchaseMoneyDto);
+  int purchaseOutMoney(AccountPurchaseMoneyDto accountPurchaseMoneyDto);
 
 }

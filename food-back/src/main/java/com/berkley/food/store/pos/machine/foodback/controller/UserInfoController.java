@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.berkley.food.store.pos.machine.foodback.domain.dto.account.AccountDto;
 import com.berkley.food.store.pos.machine.foodback.domain.dto.log.LogDto;
 import com.berkley.food.store.pos.machine.foodback.domain.dto.userinfo.UserInfoDto;
 import com.berkley.food.store.pos.machine.foodback.domain.vo.userinfo.UserInfoVo;
+import com.berkley.food.store.pos.machine.foodback.service.AccountService;
 import com.berkley.food.store.pos.machine.foodback.service.LogService;
 import com.berkley.food.store.pos.machine.foodback.service.UserInfoService;
 
@@ -22,6 +24,8 @@ public class UserInfoController {
   UserInfoService userInfoService;
   @Autowired
   LogService logService;
+  @Autowired
+  AccountService accountService;
 
   /**
    * API : 회원 정보 조회 서비스
@@ -57,9 +61,18 @@ public class UserInfoController {
     int insertUserInfoStatus = userInfoService.insertUserInfo(userInfoDto);
     System.out.println(insertUserInfoStatus);
 
+    // 계좌 추가
+
+    long userMoney = 200000;
+    AccountDto accountDto = AccountDto.fromInitInsert(
+        userInfoService.selectLastRowUno(),
+        userMoney);
+
+    int insertAccountStatus = accountService.insertAccount(accountDto);
+    System.out.println(insertAccountStatus);
+
     // 로그 삽입
     LogDto logDto = LogDto.fromUserInfo(userInfoVo);
-
     // 마지막 행 출력 이용하여, 유저 삽입 시 auto로 생성된 uno를 넣는다.
     logDto.setUno(userInfoService.selectLastRowUno());
     System.out.println(logDto.toString());

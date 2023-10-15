@@ -22,4 +22,15 @@ public class AccountDto {
         .userMoney(accountVo.getUserMoney())
         .build();
   }
+
+  // 이 부분은 사용자 생성시 200,000원으로 초기화
+  public static AccountDto fromInitInsert(Long uno, long userMoney) {
+    if (uno == null)
+      return null;
+
+    return AccountDto.builder()
+        .uno(uno)
+        .userMoney(userMoney)
+        .build();
+  }
 }
