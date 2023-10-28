@@ -36,7 +36,7 @@ public class AccountService {
   }
 
   /**
-   * 계좌 입금
+   * 계좌 입/출금
    * 
    * @return
    */
@@ -50,15 +50,5 @@ public class AccountService {
     System.out.println(insertLogStatus);
 
     return 1;
-  }
-
-  /**
-   * 계좌 출금
-   * 
-   * @return
-   */
-  public int changeOutMoneyAccount(AccountDto accountDto) {
-    accountDto.setUserMoney(-accountDto.getUserMoney());
-    return accountMapper.changeInOutMoney(accountDto);
   }
 }
