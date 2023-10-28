@@ -44,8 +44,7 @@ public class UserInfoController {
   @PostMapping("/insert/user/info")
   public int insertUserInfo(
       @RequestBody UserInfoVo userInfoVo) {
-    int i = userInfoService.insertUserInfo(userInfoVo);
-    return i;
+    return userInfoService.insertUserInfo(userInfoVo);
   }
 
   /**

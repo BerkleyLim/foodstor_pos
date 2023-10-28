@@ -31,12 +31,12 @@ public class LogService {
     return logMapper.deleteLog();
   }
 
-  /**
-   * 로그 삽입
-   * 
-   * @return
-   */
-  public int insertLog(LogDto logDto) {
-    return logMapper.insertLog(logDto);
-  }
+  // /**
+  // * 로그 삽입
+  // *
+  // * @return
+  // */
+  // public int insertLog(LogDto logDto) {
+  // return logMapper.insertLog(logDto);
+  // }
 }

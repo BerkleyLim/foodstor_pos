@@ -28,15 +28,15 @@ public class LogController {
     return logService.selectLog();
   }
 
-  /**
-   * @param logDto : 로그 정보 입력 내용 추가
-   * @return : 삽입 성공 값
-   */
-  @PostMapping("/insert/log")
-  public int insertLog(
-      @RequestBody LogDto logDto) {
-    return logService.insertLog(logDto);
-  }
+  // /**
+  // * @param logDto : 로그 정보 입력 내용 추가
+  // * @return : 삽입 성공 값
+  // */
+  // @PostMapping("/insert/log")
+  // public int insertLog(
+  // @RequestBody LogDto logDto) {
+  // return logService.insertLog(logDto);
+  // }
 
   // /**
   // * @return : 제거 성공 값
