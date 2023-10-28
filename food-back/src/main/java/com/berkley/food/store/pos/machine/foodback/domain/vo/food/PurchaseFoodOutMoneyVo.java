@@ -7,8 +7,6 @@ public class PurchaseFoodOutMoneyVo {
   // 음식 구매시의 대한 정보
   Long uno;
   Long fno;
-  Long foodPrice;
-  int vat;
 
   // 로그에 담을 변수 (uno는 이미 있으니 생략)
   Long lno;

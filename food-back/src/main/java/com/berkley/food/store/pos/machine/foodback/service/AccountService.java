@@ -1,15 +1,11 @@
 package com.berkley.food.store.pos.machine.foodback.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.berkley.food.store.pos.machine.foodback.domain.dto.account.AccountDto;
-import com.berkley.food.store.pos.machine.foodback.domain.dto.account.AccountPurchaseMoneyDto;
 import com.berkley.food.store.pos.machine.foodback.domain.dto.log.LogDto;
 import com.berkley.food.store.pos.machine.foodback.domain.vo.account.AccountVo;
-import com.berkley.food.store.pos.machine.foodback.domain.vo.food.PurchaseFoodOutMoneyVo;
 import com.berkley.food.store.pos.machine.foodback.mapper.AccountMapper;
 import com.berkley.food.store.pos.machine.foodback.mapper.LogMapper;
 
@@ -64,30 +60,5 @@ public class AccountService {
   public int changeOutMoneyAccount(AccountDto accountDto) {
     accountDto.setUserMoney(-accountDto.getUserMoney());
     return accountMapper.changeInOutMoney(accountDto);
-  }
-
-  /**
-   * 음식 주문 시 출금
-   * 
-   * @return
-   */
-  public int PurchaseMoneyAccount(PurchaseFoodOutMoneyVo purchaseFoodOutMoneyVo) {
-    AccountPurchaseMoneyDto accountPurchaseMoneyDto = AccountPurchaseMoneyDto.from(purchaseFoodOutMoneyVo);
-    int insertAccountStatus = accountMapper.purchaseOutMoney(accountPurchaseMoneyDto);
-    System.out.println(insertAccountStatus);
-
-    LogDto logDto = LogDto.fromPurchaseFoodOutMoneyVo(purchaseFoodOutMoneyVo);
-    int insertLogStatus = logMapper.insertLog(logDto);
-    System.out.println(insertLogStatus);
-    return 1;
-  }
-
-  /**
-   * 계좌 삽입 (아직 사용을 하지 않지만, 회원 정보 서비스에서 사용 예정, 그냥 테스트 용도로 둠)
-   * 
-   * @return
-   */
-  public int insertAccount(AccountDto accountDto) {
-    return accountMapper.insertAccount(accountDto);
   }
 }

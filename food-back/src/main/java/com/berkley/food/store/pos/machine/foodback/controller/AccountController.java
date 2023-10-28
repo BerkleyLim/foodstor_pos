@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.berkley.food.store.pos.machine.foodback.domain.dto.account.AccountDto;
-import com.berkley.food.store.pos.machine.foodback.domain.dto.account.AccountPurchaseMoneyDto;
+import com.berkley.food.store.pos.machine.foodback.domain.dto.food.FoodPurchaseMoneyDto;
 import com.berkley.food.store.pos.machine.foodback.domain.dto.log.LogDto;
 import com.berkley.food.store.pos.machine.foodback.domain.vo.account.AccountVo;
 import com.berkley.food.store.pos.machine.foodback.domain.vo.food.PurchaseFoodOutMoneyVo;
@@ -36,39 +36,13 @@ public class AccountController {
   }
 
   /**
-   * @param accountDto : 계좌 입력 내용 추가 (실제로 사용 하지 않음, 테스트용)
-   * @return : 삽입 성공 값
+   * @param accountVo : 계좌 입출금
+   * @return : 성공 값
    */
-  @PostMapping("/insert/account")
-  public int insertAccount(
-      @RequestBody AccountDto accountDto) {
-    return accountService.insertAccount(accountDto);
-  }
-
-  /**
-   * @param accountDto : 계좌 입출금
-   * @return : 삽입 성공 값
-   */
-  @PostMapping("/purchse/food")
-  public int purchaseOutMoney(
-      @RequestBody PurchaseFoodOutMoneyVo purchaseFoodOutMoneyVo) {
-
-    return accountService.PurchaseMoneyAccount(purchaseFoodOutMoneyVo);
-  }
-
   @PostMapping("/change")
   public int InOutAccount(
       @RequestBody AccountVo accountVo) {
     return accountService.changeInOutMoneyAccount(accountVo);
   }
-
-  // /**
-  // * @param accountDto : 계좌 정보 삭제
-  // * @return : 삭제 성공 값
-  // */
-  // @PostMapping("/delete/user/info")
-  // public int deleteAccount() {
-  // return accountService.deleteAccount();
-  // }
 
 }
