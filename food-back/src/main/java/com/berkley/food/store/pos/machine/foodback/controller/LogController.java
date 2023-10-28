@@ -38,12 +38,12 @@ public class LogController {
     return logService.insertLog(logDto);
   }
 
-  /**
-   * @return : 제거 성공 값
-   */
-  @PostMapping("/delete/log")
-  public int deleteLog() {
-    return logService.deleteLog();
-  }
+  // /**
+  // * @return : 제거 성공 값
+  // */
+  // @PostMapping("/delete/log")
+  // public int deleteLog() {
+  // return logService.deleteLog();
+  // }
 
 }

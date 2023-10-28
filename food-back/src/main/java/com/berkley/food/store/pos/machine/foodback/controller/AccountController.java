@@ -53,39 +53,22 @@ public class AccountController {
   public int purchaseOutMoney(
       @RequestBody PurchaseFoodOutMoneyVo purchaseFoodOutMoneyVo) {
 
-    AccountPurchaseMoneyDto accountPurchaseMoneyDto = AccountPurchaseMoneyDto.from(purchaseFoodOutMoneyVo);
-    int insertAccountStatus = accountService.PurchaseMoneyAccount(accountPurchaseMoneyDto);
-    System.out.println(insertAccountStatus);
-
-    LogDto logDto = LogDto.fromPurchaseFoodOutMoneyVo(purchaseFoodOutMoneyVo);
-    int insertLogStatus = logService.insertLog(logDto);
-    System.out.println(insertLogStatus);
-
-    return 1;
+    return accountService.PurchaseMoneyAccount(purchaseFoodOutMoneyVo);
   }
 
   @PostMapping("/change")
   public int InOutAccount(
       @RequestBody AccountVo accountVo) {
-
-    AccountDto accountDto = AccountDto.from(accountVo);
-    int insertAccountStatus = accountService.changeInMoneyAccount(accountDto);
-    System.out.println(insertAccountStatus);
-
-    LogDto logDto = LogDto.fromAccountInOutMoney(accountVo);
-    int insertLogStatus = logService.insertLog(logDto);
-    System.out.println(insertLogStatus);
-
-    return 1;
+    return accountService.changeInOutMoneyAccount(accountVo);
   }
 
-  /**
-   * @param accountDto : 계좌 정보 삭제
-   * @return : 삭제 성공 값
-   */
-  @PostMapping("/delete/user/info")
-  public int deleteAccount() {
-    return accountService.deleteAccount();
-  }
+  // /**
+  // * @param accountDto : 계좌 정보 삭제
+  // * @return : 삭제 성공 값
+  // */
+  // @PostMapping("/delete/user/info")
+  // public int deleteAccount() {
+  // return accountService.deleteAccount();
+  // }
 
 }
