@@ -16,6 +16,8 @@
   </delete>
   <!-- where uno = #{uno} -->
 
+  <!-- Front End에서 계산하여 user_money 값은 입출금 결과 값을 받아서 그냥 직접적으로 변경하는 형식으로 변경 -->
+  <!-- set user_money = ((select user_money from T_ACCOUNT where uno=1) - (#{userMoney})) 사용 안함 -->
   <update id="changeInOutMoney">
     update  T_ACCOUNT
       set user_money = (#{userMoney})
