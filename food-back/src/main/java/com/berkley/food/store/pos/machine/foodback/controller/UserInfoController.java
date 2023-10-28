@@ -43,8 +43,6 @@ public class UserInfoController {
    */
   @PostMapping("/insert/user/info")
   public int insertUserInfo(
-      // @RequestBody UserInfoDto userInfoDto) {
-      // return userInfoService.insertUserInfo(userInfoDto);
       @RequestBody UserInfoVo userInfoVo) {
     /**
      * 아래부터 개발 만 했을 경우, 정상적으로 로직이 잘 돌아가나
@@ -90,6 +88,8 @@ public class UserInfoController {
   public int deleteUserInfo() {
     int deleteUserInfoStatus = userInfoService.deleteUserInfo();
     System.out.println(deleteUserInfoStatus);
+    int deleteAccountStatus = accountService.deleteAccount();
+    System.out.println(deleteAccountStatus);
     int deleteLogStatus = logService.deleteLog();
     System.out.println(deleteLogStatus);
     return 1;

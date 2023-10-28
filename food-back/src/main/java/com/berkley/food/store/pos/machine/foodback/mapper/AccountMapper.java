@@ -11,7 +11,8 @@ import com.berkley.food.store.pos.machine.foodback.domain.dto.account.AccountPur
 @Repository
 @Mapper
 public interface AccountMapper {
-  List<AccountDto> selectAccount();
+  // List<AccountDto> selectAccount();
+  AccountDto selectAccount(Long uno);
 
   int insertAccount(AccountDto accountDto);
 

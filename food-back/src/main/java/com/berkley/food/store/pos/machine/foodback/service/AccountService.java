@@ -19,8 +19,9 @@ public class AccountService {
    * 
    * @return
    */
-  public List<AccountDto> selectAccount() {
-    return accountMapper.selectAccount();
+  // public List<AccountDto> selectAccount() {
+  public AccountDto selectAccount(Long uno) {
+    return accountMapper.selectAccount(uno);
   }
 
   /**
