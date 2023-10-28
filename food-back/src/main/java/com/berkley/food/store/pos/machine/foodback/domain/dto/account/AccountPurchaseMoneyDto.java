@@ -10,7 +10,6 @@ import lombok.Data;
 public class AccountPurchaseMoneyDto {
   Long uno;
   Long fno;
-  Long money;
 
   // 이 부분은 Vo에서 받아온 메소드를 dto에 넣기 위해 실행
   public static AccountPurchaseMoneyDto from(PurchaseFoodOutMoneyVo purchaseFoodOutMoneyVo) {
@@ -20,7 +19,6 @@ public class AccountPurchaseMoneyDto {
     return AccountPurchaseMoneyDto.builder()
         .uno(purchaseFoodOutMoneyVo.getUno())
         .fno(purchaseFoodOutMoneyVo.getFno())
-        .money(purchaseFoodOutMoneyVo.getFoodPrice() + purchaseFoodOutMoneyVo.getVat())
         .build();
   }
 }

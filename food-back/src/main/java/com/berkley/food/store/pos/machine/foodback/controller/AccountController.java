@@ -1,44 +1,82 @@
 package com.berkley.food.store.pos.machine.foodback.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.berkley.food.store.pos.machine.foodback.domain.dto.account.AccountDto;
+import com.berkley.food.store.pos.machine.foodback.domain.dto.account.AccountPurchaseMoneyDto;
+import com.berkley.food.store.pos.machine.foodback.domain.dto.log.LogDto;
+import com.berkley.food.store.pos.machine.foodback.domain.vo.account.AccountVo;
+import com.berkley.food.store.pos.machine.foodback.domain.vo.food.PurchaseFoodOutMoneyVo;
 import com.berkley.food.store.pos.machine.foodback.service.AccountService;
+import com.berkley.food.store.pos.machine.foodback.service.LogService;
 
 @RestController
 @RequestMapping("/api/account")
 public class AccountController {
   @Autowired
   AccountService accountService;
+  @Autowired
+  LogService logService;
 
   /**
    * API : 계좌 조회 서비스
    * 
    * @return : 전체 계좌 조회 추가 (연습용 프로젝트이므로, 실질적으로 1개만 저장 됨)
    */
-  @GetMapping("/")
-  // public List<AccountDto> selectAccount() {
+  @GetMapping("/{uno}")
   public AccountDto selectAccount(
-      @RequestParam("uno") String uno) {
+      @PathVariable String uno) {
     return accountService.selectAccount(Long.parseLong(uno));
   }
 
   /**
-   * @param accountDto : 계좌 입력 내용 추가
+   * @param accountDto : 계좌 입력 내용 추가 (실제로 사용 하지 않음, 테스트용)
    * @return : 삽입 성공 값
    */
   @PostMapping("/insert/account")
   public int insertAccount(
       @RequestBody AccountDto accountDto) {
     return accountService.insertAccount(accountDto);
+  }
+
+  /**
+   * @param accountDto : 계좌 입출금
+   * @return : 삽입 성공 값
+   */
+  @PostMapping("/purchse/food")
+  public int purchaseOutMoney(
+      @RequestBody PurchaseFoodOutMoneyVo purchaseFoodOutMoneyVo) {
+
+    AccountPurchaseMoneyDto accountPurchaseMoneyDto = AccountPurchaseMoneyDto.from(purchaseFoodOutMoneyVo);
+    int insertAccountStatus = accountService.PurchaseMoneyAccount(accountPurchaseMoneyDto);
+    System.out.println(insertAccountStatus);
+
+    LogDto logDto = LogDto.fromPurchaseFoodOutMoneyVo(purchaseFoodOutMoneyVo);
+    int insertLogStatus = logService.insertLog(logDto);
+    System.out.println(insertLogStatus);
+
+    return 1;
+  }
+
+  @PostMapping("/change")
+  public int InOutAccount(
+      @RequestBody AccountVo accountVo) {
+
+    AccountDto accountDto = AccountDto.from(accountVo);
+    int insertAccountStatus = accountService.changeInMoneyAccount(accountDto);
+    System.out.println(insertAccountStatus);
+
+    LogDto logDto = LogDto.fromAccountInOutMoney(accountVo);
+    int insertLogStatus = logService.insertLog(logDto);
+    System.out.println(insertLogStatus);
+
+    return 1;
   }
 
   /**

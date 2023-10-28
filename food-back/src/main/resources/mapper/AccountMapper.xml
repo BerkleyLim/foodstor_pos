@@ -18,7 +18,7 @@
 
   <update id="changeInOutMoney">
     update  T_ACCOUNT
-      set user_money = ((select user_money from T_ACCOUNT where uno=#{uno}) + #{money})
+      set user_money = (#{userMoney})
     where uno = #{uno};
   </update>
 
