@@ -35,7 +35,7 @@ public class FoodController {
   /**
    * API : 음식 구매
    *
-   * @return : 음식 구매 변경 값 (연습용 프로젝트이므로, 실질적으로 1개만 저장 됨)
+   * @return : 음식 구매시 계좌 출금
    */
   @PostMapping("/purchase")
   public int purchaseFoodAccount(
