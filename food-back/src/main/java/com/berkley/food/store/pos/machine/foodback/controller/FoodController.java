@@ -25,7 +25,7 @@ public class FoodController {
   /**
    * API : 음식 조회 서비스
    * 
-   * @return : 전체 회원 정보 조회 추가 (연습용 프로젝트이므로, 실질적으로 1개만 저장 됨)
+   * @return : 음식 메뉴 전체 조회 (원래는 필요하지만 이 프로젝트에서는 그냥 변하지 않는 메뉴라고 가정하고 할 예정)
    */
   @GetMapping("/")
   public List<FoodDto> selectFood() {
