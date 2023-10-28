@@ -6,7 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 
 @Data
-@Builder
+@Builder // Builder Reqeust 값 중 일부분을 Dto에 생성을 위해 작업 진행
 public class AccountDto {
   Long ano;
   Long uno;
@@ -23,7 +23,7 @@ public class AccountDto {
         .build();
   }
 
-  // 이 부분은 사용자 생성시 200,000원으로 초기화
+  // 이 부분은 사용자 생성시 잔고 초기화 (200,000원으로 default로 초기화 해줌)
   public static AccountDto fromInitInsert(Long uno, long userMoney) {
     if (uno == null)
       return null;
