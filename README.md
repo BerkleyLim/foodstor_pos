@@ -58,12 +58,8 @@ This is the program on foot store pos machine.
 - [(11) 백엔드 인터페이스 개발(5) - 인터페이스 개발(3), 음식 정보, 계좌 정보 와 로그 부분(2) Service와 Controller](https://berkley.tistory.com/55)
 - [(12) 프론트엔드 API 연동(1) - 고객 정보, 로그 표시 연동 ](https://berkley.tistory.com/56)
 - [(13) 프론트엔드 API 연동(2) - 계좌 입출금, 음식 구매 연동 (로그 파일 삽입 포함)](https://berkley.tistory.com/57)
-- [(14) 프론트엔드 - 운영 시, Recoil로 이용한 새로 고침시 state 값 유지 하기]()
-- [(15) 버그 수정 및 코드 정리 리팩토링]()
-- [별첨1 - React-Query 사용 방법]()
-- [별첨2 - Spring Boot H2 Database 사용 방법]()
-- [별첨3 - React Native를 이용한 Native App 개발 - Webview 연동]()
-- [별첨4 - React Native와 Java 서버 API 연동]()
+- [(별첨) 프론트엔드 - 운영 시, Recoil로 이용한 새로 고침시 state 값 유지 하기]()
+
 
 ## 요구사항
 - 고객사께서 직접 음식점을 차리고 있는 상황이다.
