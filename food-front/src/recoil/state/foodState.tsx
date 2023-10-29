@@ -1,5 +1,22 @@
 import {atom} from 'recoil'
 
+export interface FoodTypeVo {
+  // userInfoVo에 담을 변수
+  uno: number,
+  fno: number,
+  pageNo: number,
+  pageEventTitle: string,
+  pageEventView: string,
+  crtTime: string
+}
+
+export interface FoodType {
+  fno: number
+  ,foodMenu: string
+  ,foodPrice: number
+  ,VAT: number
+};
+
 export const foodState = atom({
   key: 'food',
   default: [
@@ -33,7 +50,7 @@ export const foodState = atom({
       , foodPrice: 4000
       , VAT: 400
     },
-  ]
+  ] as FoodType[]
 });
 
 // https://velog.io/@juno7803/Recoil-Recoil-200-%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0
