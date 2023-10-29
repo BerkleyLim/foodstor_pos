@@ -1,10 +1,28 @@
 import { Card, CardBody, CardHeader, Table } from "reactstrap";
 import styles from "../index.module.scss";
-import { useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import { logInfoState } from '../../recoil/state/logInfoState'
+import { useQuery } from "react-query";
 
-const LogInfo = () => {
-  const logInfo = useRecoilValue(logInfoState);
+const LogInfo = ():any => {
+  const [logInfo, setLogInfo] = useRecoilState(logInfoState);
+  const { isLoading, isError, data } = useQuery({
+    queryKey: ['userLog'],
+    queryFn: () =>
+      fetch('http://localhost:8080/api/log/').then(
+        (res) => res.json()
+      ).then(
+        (res) => {
+          setLogInfo(res)
+        }
+      ),
+  });
+
+  if (isLoading) return 'Loading...';
+
+  if (isError) return 'An error has occurred : ';
+
+  console.log(data)
   return (
     <Card body className={`${styles?.kioskLog}`}>
       <CardHeader tag="h1">주문 정보 관련 로그(사용자용)</CardHeader>
