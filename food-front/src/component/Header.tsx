@@ -1,25 +1,34 @@
 import { Col, Row } from 'reactstrap'
-import { useRecoilValue } from 'recoil';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import styles from "./index.module.scss"
 import { userInfoState } from '../recoil/state/userInfoState'
+import { useQuery } from 'react-query';
+import { useEffect } from 'react';
 
 
-const Header = () => {
+const Header = (): String | any => {
+  const setUserInfo = useSetRecoilState(userInfoState);
   const userInfo = useRecoilValue(userInfoState);
-  console.log(userInfo)
+
+  const { isLoading, isError, data } = useQuery({
+    queryKey: ['userInfoQuery'],
+    queryFn: () =>
+      fetch('http://localhost:8080/api/user/info/').then(
+        (res) => res.json(),
+      ),
+  });
+
+  if (isLoading) return 'Loading...';
+
+  if (isError) return 'An error has occurred : ';
+
+  setUserInfo(data[0]);
+
   return (
     <div className={`${styles?.headerComponent} mb-5`}>
-      {/* <Row>
-        <Col>이름 : Berkley (29)</Col>
-        <Col>주민번호 : 840501</Col>
-      </Row>
-      <Row>
-        <Col>성별 : 남</Col>
-        <Col>전화번호 : 01011111111</Col>
-      </Row> */}
       <Row>
         <Col>이름 : {userInfo?.userName} ({userInfo?.userAge})</Col>
-        <Col>주민번호 : {userInfo?.userInfoNumber}</Col>
+        <Col>주민번호 : {userInfo?.userNumber}</Col>
       </Row>
       <Row>
         <Col>성별 : {userInfo?.userSex}</Col>
