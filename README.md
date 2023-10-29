@@ -57,7 +57,7 @@ This is the program on foot store pos machine.
 - [(10) 백엔드 인터페이스 개발(4) - 인터페이스 개발(2), 고객 정보 와 로그 부분(1) Service와 Controller](https://berkley.tistory.com/54)
 - [(11) 백엔드 인터페이스 개발(5) - 인터페이스 개발(3), 음식 정보, 계좌 정보 와 로그 부분(2) Service와 Controller](https://berkley.tistory.com/55)
 - [(12) 프론트엔드 API 연동(1) - 고객 정보, 로그 표시 연동 ](https://berkley.tistory.com/56)
-- [(13) 프론트엔드 층API 연동(2)]()
+- [(13) 프론트엔드 API 연동(2) - 계좌 입출금, 음식 구매 연동 (로그 파일 삽입 포함)](https://berkley.tistory.com/57)
 - [(14) 프론트엔드 - 운영 시, Recoil로 이용한 새로 고침시 state 값 유지 하기]()
 - [(15) 버그 수정 및 코드 정리 리팩토링]()
 - [별첨1 - React-Query 사용 방법]()
