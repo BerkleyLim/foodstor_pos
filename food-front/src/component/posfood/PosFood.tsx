@@ -2,7 +2,7 @@ import { Button, Card, CardBody, Col, Row } from 'reactstrap'
 import styles from "../index.module.scss"
 import Header from '../Header'
 import { useRecoilState, useRecoilValue } from 'recoil'
-import { FoodTypeVo, foodState } from "../../recoil/state/foodState"
+import { FoodType, FoodTypeVo, foodState } from "../../recoil/state/foodState"
 import { userBankInfoState } from "../../recoil/state/userBankInfoState"
 import { userInfoState } from '../../recoil/state/userInfoState'
 import { useMutation } from 'react-query'
@@ -69,7 +69,7 @@ const PosFood = () => {
         </div>
         <div className={styles?.moneyTextInfo}>현재 잔액 : <span className={styles?.moneyText}>{bankInfo?.userMoney as number}</span>원</div>
         <Row className={`mt-5`}>
-          {food?.map((f, index) =>
+          {food?.map((f:FoodType, index:number) =>
             <Col md={4} key={index} className={`mb-5`}>
               <Card>
                 <CardBody>
