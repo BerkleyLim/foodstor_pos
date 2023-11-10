@@ -2,16 +2,13 @@
 This is the program on foot store pos machine.
 
 ## 개발 목적
-- Github 토이 프로젝트로 알고리즘 실력 올리는 프로젝트의 목적으로 시작
-- 현업에서 최상의 퍼포먼스를 내기 위한 숙련도를 쌓는 프로젝트 중 하나인 프로젝트
-- 이 프로젝트는 모의 프로젝트를 이용하여 실제 실무력을 올리기 위해 개발을 진행 한다.
-- 이를 토대로 웹으로 개발을 하여 실제로 돌아가는 프로그램으로 구현
-- 현재 Typescript와 React-Query를 익히고, H2 Database 활용도를 높인다
-- React를 이용하여 프론트엔드 적용, Spring Boot와 Java 로직을 이용하여 포스기 로직, 계산기 로직, 음식점 로직을 활용하여 적용
-- 실제 포스 프로그램 처럼 제작을 해보고, 본인 정보와 은행 입출금 및 조회 알고리즘을 도입하여 잔액 계산을 해보자
+- Github 토이 프로젝트로 타인에게 조금이나마 공부가 되는 프로젝트로 진행
+- Typescript와 React-Query, Recoil의 대해 이해도를 높이고, H2 Database 활용도를 높인다
+- React를 이용하여 프론트엔드 적용, Spring Boot와 Java 로직을 이용하여 포스기 로직, 음식점 로직을 활용하여 적용
+- 실제 포스 프로그램 처럼 제작을 해보고, 테스트를 위해 사용자 이벤트 로그로 남김
 
 ## 개발 기간
-- 23년 9월 8일 ~
+- 23년 9월 8일 ~ 23년 10월 28일일
 
 ## 개발 환경
 - OS : Windows 11
@@ -30,9 +27,6 @@ This is the program on foot store pos machine.
 (3) 백엔드
 - Java, Spring Boot, My-Batis, H2 Database, Spring JDBC, 
 
-(4) App
-- React Native(옵션), @react-navigation/stack, @react-navigaation/native, react-native-gesture-handler, react-native-reanimated, react-native-screens, react-native-safe-area-context, @react-native-community/masked-view
-
 ## 파급효과
 - 개발 숙련도가 보다 더 향상하는 계기가 되었다
 - Typescript에 대해 접할 수 있는 기회가 되었다
@@ -41,7 +35,6 @@ This is the program on foot store pos machine.
 - H2 Database를 활용 할 수 있다.
 - 웹 개발 부분에 있어 자신감 있게 개발 가능 할 수 있었다.
 - 마지막으로 React Native를 활용하여 Android OS와 연동 가능 (IOS는 차후 공부 예정)
-
 
 
 ## 블로그 - 추후 업데이트
@@ -76,50 +69,19 @@ This is the program on foot store pos machine.
 
 
 ## Getting Start
-- 공통 : 먼저 리파지토리를 받는다.
 ```
-$ git clone https://github.com/BerkleyLim/foodstor_pos.git
-```
-
-- 프론트엔드(React)
-(1) front에 먼저 들어간다.
-```
-$ cd *front
+#프론트엔드
+#repo
+cd *front
+npm start # 로컬 개발 모드
+#npm run build; serve -s build  #배포모드
 ```
 
-(2) node_module 다운로드 받는다. (본인이 nodejs 16.18.0이 아닐 경우, scss 버전 직접 맞출 것)
 ```
-$ npm install
-```
-
-(3) 이후, front 서버 실행해본다.
-```
-$ npm run start
-
-혹은
-
-$ npm run build; serve -s build  #배포모드
-```
-
-- 백엔드(Spring boot)
-(1) back에 먼저 들어간다.
-```
-$ cd *back
-```
-
-(2) gradle 명령어를 먼저 수행
-```
-$ gradle
-```
-
-(3) 이후 스프링부트 실행 (Java 11에서 실행 추천 - 현업에서 주로 쓰이는 버전)
-```
-$ gradle bootrun
-
-or
-
-$ gradle build; cd build/libs; java -jar food-back-0.0.1-SNAPSHOT.jar 
+#백엔드
+#repo
+cd *back
+gradle bootrun
+# gradle build; cd build/libs; java -jar food-back-0.0.1-SNAPSHOT.jar # 배포모드
 # food-back*.jar 파일은 이름이 다를 수 있다. ex) food-back-0.0.2-SNAPSHOT.jar 도 될 수 있음
 ```
-- 모바일앱(React Native) : Android
-- (차후 업로드 예정)
