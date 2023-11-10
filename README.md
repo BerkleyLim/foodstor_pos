@@ -37,7 +37,7 @@ This is the program on foot store pos machine.
 - 마지막으로 React Native를 활용하여 Android OS와 연동 가능 (IOS는 차후 공부 예정)
 
 
-## 블로그 - 추후 업데이트
+## 블로그
 - [(1) 요구사항 설정 및 설계](https://berkley.tistory.com/45)
 - [(2) 개발 설정 : front, Back-End](https://berkley.tistory.com/46)
 - [(3) 화면단 개발(1) - 고객 정보 입력 개발 및 서비스 개발](https://berkley.tistory.com/47)
