@@ -22,13 +22,13 @@ This is the program on foot store pos machine.
 
 ## 사용 스택
 (1) 인프라(서버)
-- Window, Local 서버에서 활용 (Getting Start 업로드 예정)
+- Window, Local 서버에서 활용 (Getting Start 참조)
 
 (2) 프론트 엔드
 - React, React-Query, Typescript, react-strap, bootstrap, scss/sass, React-Router, react-router-dom, recoil
 
 (3) 백엔드
-- Java, Spring Boot, My-Batis, H2 Database, Spring JDBC, 
+- Java, Spring Boot, My-Batis, H2 Database, Spring JDBC
 
 ## 파급효과
 - Typescript와 React-Query, Recoil의 대한 학습을 할 수 있었다.
