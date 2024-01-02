@@ -2,15 +2,18 @@
 This is the program on foot store pos machine.
 
 ## 개발 목적
+
 - Github 토이 프로젝트로 타인에게 조금이나마 공부가 되는 프로젝트로 진행
 - Typescript와 React-Query, Recoil의 대해 이해도를 높이고, H2 Database 활용도를 높인다
 - React를 이용하여 프론트엔드 적용, Spring Boot와 Java 로직을 이용하여 포스기 로직, 음식점 로직을 활용하여 적용
 - 실제 포스 프로그램 처럼 제작을 해보고, 테스트를 위해 사용자 이벤트 로그로 남김
 
 ## 개발 기간
+
 - 23년 9월 8일 ~ 23년 10월 28일일
 
 ## 개발 환경
+
 - OS : Windows 11
 - Tool : VS code
 - Java 11
@@ -28,14 +31,9 @@ This is the program on foot store pos machine.
 - Java, Spring Boot, My-Batis, H2 Database, Spring JDBC, 
 
 ## 파급효과
-- 개발 숙련도가 보다 더 향상하는 계기가 되었다
-- Typescript에 대해 접할 수 있는 기회가 되었다
-- React-Query 사용하는 방법에 대해 숙지할 수 있다
-- Java기반으로 백엔드 로직을 구현 할 수 있다.
-- H2 Database를 활용 할 수 있다.
+- Typescript와 React-Query, Recoil의 대한 학습을 할 수 있었다.
+- Java 기반으로 백엔드 로직을 구현 및 H2 Database를 활용하는 방법의 대해 익혔다.
 - 웹 개발 부분에 있어 자신감 있게 개발 가능 할 수 있었다.
-- 마지막으로 React Native를 활용하여 Android OS와 연동 가능 (IOS는 차후 공부 예정)
-
 
 
 ## Getting Start
