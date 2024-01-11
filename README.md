@@ -10,7 +10,7 @@ This is the program on foot store pos machine.
 
 ## 개발 기간
 
-- 23년 9월 8일 ~ 23년 10월 28일일
+- 23년 9월 8일 ~ 23년 10월 28일
 
 ## 개발 환경
 
