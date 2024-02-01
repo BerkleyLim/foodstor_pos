@@ -16,7 +16,7 @@ public class LogService {
   /**
    * 로그 전체 조회
    * 
-   * @return
+   * @return  
    */
   public List<LogDto> selectLog() {
     return logMapper.selectLog();
