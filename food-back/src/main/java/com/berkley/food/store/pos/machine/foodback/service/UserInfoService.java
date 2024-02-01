@@ -25,7 +25,7 @@ public class UserInfoService {
   /**
    * 회원 전체 조회
    * 
-   * @return
+   * @return  
    */
   public List<UserInfoDto> selectUserInfo() {
     return userInfoMapper.selectUserInfo();
