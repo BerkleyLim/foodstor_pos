@@ -22,7 +22,7 @@ public class FoodService {
   @Autowired
   LogMapper logMapper;
 
-  /**
+  /** 
    * 음식 메뉴 전체 조회
    * 
    * @return
